@@ -84,9 +84,10 @@ public class paOne{
     }
 
     public static char getOption(){
-        // use the scanner here
-        Scanner scanner = new Scanner(System.in);
+        
         while (true) { 
+            // use the scanner here
+            Scanner scanner = new Scanner(System.in);
             try {
                 String option = scanner.nextLine();
                 while (option.length() == 1){
@@ -109,6 +110,7 @@ public class paOne{
                 if (option.length() > 1){
                     throw new Exception("No words! Characaters only");
                 }
+                scanner.close();
             } 
             catch (Exception e) {
                 System.err.println(e);
