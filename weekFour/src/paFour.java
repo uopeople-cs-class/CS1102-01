@@ -19,8 +19,7 @@ public class paFour {
         System.out.println(occurance);
         ArrayList<Integer> dailyPriceList =
             new ArrayList<>(Arrays.asList(230, 200, 900, 342, 700, 433, 500, 900, 900, 900));
-        ArrayList<Integer> cumulativePriceList = new ArrayList<>();
-        cumulativePriceList = computeCumulativeSum(dailyPriceList);
+        ArrayList<Integer> cumulativePriceList = computeCumulativeSum(dailyPriceList);
         System.out.println(cumulativePriceList);
     }
 
@@ -53,9 +52,9 @@ public class paFour {
     static int countOccurance(int[] dps) {
         // set the counted to zero
         int count = 0;
-        // turn on scanner for inputs
-        Scanner input = new Scanner(System.in);
         // takes the input from the user
+        @SuppressWarnings("resource")
+        Scanner input = new Scanner(System.in);
         while (true) { 
             try {
                 // get the input
@@ -69,8 +68,8 @@ public class paFour {
                 }
                 return count;
             }
-            catch (Exception e) {
-                System.err.println(e);
+            catch (NumberFormatException e) {
+                System.err.println("Invalid input, please enter a valid integer.");
             }
         }
     }
